@@ -1,1 +1,1 @@
-const Util={hasClass:function(s,e){return s.className.includes(e)},addClass:function(s,e){s.classList.add(e)},removeClass:function(s,e){s.classList.remove(e)},createPanelHeader:function(s){const e=document.createElement("div");return e.classList.add("panel-header"),e.innerHTML=s,e}};
+const Util={hasClass:function(s,e){return s.className.includes(e)},addClass:function(s,e){s.classList.add(e)},removeClass:function(s,e){s.classList.remove(e)},createPanelHeader:function(s){const e=document.createElement("div");return e.classList.add("panel-heading"),e.innerHTML=s,e}};
