@@ -1,0 +1,119 @@
+/* Center Sign-Text */
+.sign {
+  text-align: center;
+}
+/* Hide Y: Coordinate */
+#mouse-move-div > .btn-group > button:nth-of-type(3) {
+  display: none;
+}
+
+/* CreditDialog-Styles */
+#boxContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000000c7;
+  z-index: 9999;
+}
+
+#infoBox {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+
+  padding: 20px;
+  padding-top: 10px;
+
+  background-color: #c5c5c5;
+  border: solid 1px #a6a6a6;
+  border-radius: 10px;
+}
+#infoBox button {
+  transition: 0.5s;
+}
+#infoBox button:hover,
+#infoBox button:focus {
+  transform: scale(1.05);
+}
+#infoBox button:active {
+  transition: 0.1s;
+  transform: scale(0.95);
+}
+
+/* Mapcrafter-Styles */
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+#mcmap {
+  width: 100%;
+  height: 100%;
+}
+
+.control-wrapper-panel {
+  background-color: white;
+}
+
+.control-wrapper-panel .panel-heading,
+.control-wrapper-panel .panel-body,
+.control-wrapper-panel .panel-footer {
+  padding: 7px 10px;
+}
+
+.control-wrapper-invisible {
+  margin: 5px;
+  padding: 4px;
+}
+
+.dropdown-menu {
+  cursor: pointer;
+}
+
+#control-wrapper-marker .list-group-item .right-padding {
+  /* because of the floating badge */
+  padding-right: 30px;
+}
+
+/*
+#control-wrapper-marker .btn {
+	width: 100%;
+}
+#control-wrapper-marker input, #control-wrapper-marker label {
+	margin:0;
+}
+#control-wrapper-marker label {
+	padding-left: 5px;
+}
+
+#control-wrapper-marker div div {
+	padding-bottom: 5px;
+}
+*/
+
+#control-wrapper-map-select {
+  z-index: initial !important;
+}
+
+#control-wrapper-rotation-select img {
+  width: 30px;
+  margin: 3px;
+}

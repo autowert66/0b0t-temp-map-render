@@ -1,0 +1,1 @@
+function BaseControl(t){this.TYPE=t,this.ui=null}BaseControl.prototype.TYPE="BaseControl",BaseControl.prototype.create=function(t){},BaseControl.prototype.getHandler=function(){return null},BaseControl.prototype.getName=function(){return"base"},BaseControl.prototype.usePanelWrapper=function(){return!0};

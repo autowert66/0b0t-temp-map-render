@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Minecraft Map</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+      http-equiv="Content-type"
+      content="text/html;charset=UTF-8"
+    />
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/leaflet/leaflet.css" />
+    <script src="static/leaflet/leaflet.js"></script>
+    <style id="bgCl"></style>
+    <script>
+      document.querySelector('#bgCl').innerHTML =
+        '.leaflet-container { background: #dddddd; }';
+    </script>
+
+    <script src="static/js/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <script src="static/js/bootstrap.min.js"></script>
+
+    <script src="static/js/util.js"></script>
+    <script src="static/js/handler/base.js"></script>
+    <script src="static/js/handler/marker.js"></script>
+    <script src="static/js/handler/mapselect.js"></script>
+    <script src="static/js/handler/poshash.js"></script>
+    <script src="static/js/handler/rotationselect.js"></script>
+    <script src="static/js/control/base.js"></script>
+    <script src="static/js/control/mapselect.js"></script>
+    <script src="static/js/control/marker.js"></script>
+    <script src="static/js/control/mousepos.js"></script>
+    <script src="static/js/control/rotationselect.js"></script>
+    <script src="static/js/mapui.js"></script>
+
+    <!-- Last update 11.03.2022, 20:32:04 -->
+    <script src="config.js"></script>
+    <script src="markers.js"></script>
+    <script src="markers-generated.js"></script>
+    <script>
+      var map = new MapUI(CONFIG);
+
+      function init() {
+        map.init();
+        document.getElementById('creditsContainer').style.display =
+          'block';
+
+        var attribution = document.getElementById('attribution');
+        map.lmap.attributionControl.addAttribution(
+          attribution.innerHTML
+        );
+        attribution.remove();
+
+        map.addControl(new MapSelectControl(), 'topright', 1);
+        map.addControl(new RotationSelectControl(), 'bottomright', 1);
+        map.addControl(new MousePosControl(), 'bottomleft', 1);
+
+        // merge the two marker configurations
+        var markers = [
+          ...(typeof MARKERS !== 'undefined' ? MARKERS : []),
+          ...(typeof MAPCRAFTER_MARKERS_GENERATED !== 'undefined'
+            ? MAPCRAFTER_MARKERS_GENERATED
+            : []),
+        ];
+        // only create marker control if marker groups exist
+        if (markers.length > 0)
+          map.addControl(new MarkerControl(markers), 'topright', 2);
+
+        // Copy baritone command
+        document.oncopy = (e) => {
+          const [xDiv, zDiv, yDiv] = document.querySelectorAll(
+            '#mouse-move-div > .btn-group > button'
+          );
+          const [x, z, y] = [xDiv, zDiv, yDiv].map((btn) =>
+            btn.innerText.slice(3)
+          );
+          // console.log({x, y, z});
+          e.clipboardData.setData('text/plain', `#goto ${x} ${z}`);
+          return false;
+        };
+      }
+    </script>
+  </head>
+
+  <body onload="init()">
+    <div id="mcmap"></div>
+
+    <div id="attribution">
+      Map rendered by
+      <span
+        style="color: #0088c6"
+        onclick="document.getElementById('creditsContainer').style.display = 'block'"
+        >autowert66</span
+      >.
+    </div>
+
+    <div id="creditsContainer" style="display: none">
+      <div id="infoBox">
+        <h3>Credits</h3>
+        <p>
+          Rendered by
+          <a href="//github.com/autowert66">autowert66</a> using
+          <a href="//mapcrafter.org">mapcrafter</a>.
+        </p>
+        <small>Last update: <em>11.03.2022, 20:32:04</em></small>
+        <button
+          onclick="document.getElementById('creditsContainer').style.display = 'none'"
+          style="margin-top: 1rem; border: solid 2px darkgray"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

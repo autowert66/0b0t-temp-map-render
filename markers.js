@@ -1,0 +1,1 @@
+var MARKERS=[{id:"bases",name:"Bases",icon:"house.png",iconSize:[16,18.5],showDefault:!1,markers:{world:[{pos:[-407,-108,5],title:"Owner Base",text:"Owner Base (griefed)"},{pos:[251,-128,5],title:"Void Base",text:"Void Base (griefed)"},{pos:[491,-502,230],title:"Ethereas Base",text:"Ethereas Base"}]}}];
