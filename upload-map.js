@@ -76,9 +76,14 @@ function getFiles(folder) {
 //#endregion
 
 async function main() {
-  const files = [];
-  files.push(...getFiles('./world_isometric'));
-  files.push(...getFiles('./world_topdown'));
+  const files = child_process
+    .execSync('git status --short')
+    .toString()
+    .split('\n')
+    .filter((line) => /^ . .*\.png$/.test(line))
+    .map((line) => line.slice(3));
+  // files.push(...getFiles('./world_isometric'));
+  // files.push(...getFiles('./world_topdown'));
 
   const total = files.length;
   let done = 0;
@@ -88,7 +93,7 @@ async function main() {
       const fileList = files.splice(0, PER_RUN);
       done += fileList.length;
       const addCmd = `git add "${fileList.join('" "')}"`;
-      
+
       await exec(addCmd, false);
     }
 
