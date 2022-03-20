@@ -38,14 +38,27 @@
     <script src="static/js/control/rotationselect.js"></script>
     <script src="static/js/mapui.js"></script>
 
-    <!-- Last update 11.03.2022, 20:32:04 -->
+    <!-- Last update 20.03.2022, 12:08:15 -->
     <script src="config.js"></script>
     <script src="markers.js"></script>
     <script src="markers-generated.js"></script>
     <script>
       var map = new MapUI(CONFIG);
 
+      function inFrame() {
+        try {
+          return window.self !== window.top;
+        } catch {
+          return true;
+        }
+      }
+
       function init() {
+        if (inFrame()) {
+          window.location.href = 'iframe.html';
+          return;
+        }
+
         map.init();
         document.getElementById('creditsContainer').style.display =
           'block';
@@ -121,7 +134,7 @@
             </li>
           </ul>
         </details>
-        <small>Last update: <em>11.03.2022, 20:32:04</em></small>
+        <small>Last update: <em>20.03.2022, 12:08:15</em></small>
         <button
           onclick="document.getElementById('creditsContainer').style.display = 'none'"
           style="margin-top: 1rem; border: solid 2px darkgray"

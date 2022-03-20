@@ -3,7 +3,7 @@ var CONFIG = {
     "world_isometric": {
       "imageFormat": "png",
       "lastRendered": [
-        1646572235,
+        1647731749,
         0,
         0,
         0
@@ -24,7 +24,7 @@ var CONFIG = {
     "world_topdown": {
       "imageFormat": "png",
       "lastRendered": [
-        1646810150,
+        1647731749,
         0,
         1646809141,
         0
