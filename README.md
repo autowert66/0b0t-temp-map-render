@@ -1,6 +1,7 @@
 ## 0b0t Temp Map Render
 
 > Update 11. March 2022:
+>
 > - Removed the original version,
 > - and uploaded the **NEW** version!
 >   - smaller image size
@@ -8,16 +9,16 @@
 >   - copy baritone commands (with `Ctrl`+`C`)
 >   - es6
 >   - _more ..._
->   
+>
 > Please report any issues or suggestions [here](https://github.com/autowert66/0b0t-temp-map-render/issues)!
 
 I took a world download of the 0b0t Temp Map _(`temp.0b0t.org`)_ and rendered it using [Mapcrafter](https://github.com/mapcrafter/mapcrafter).
 
 [![0b0t Temp Map Render](https://svg-banners.vercel.app/api?type=origin&text1=0b0t%20TEMP%F0%9F%91%80&text2=%F0%9F%92%95MAP%20RENDER%F0%9F%97%BA%EF%B8%8F&width=700&height=350)](#)
 
-> ⚠️ **DO NOT CLONE THIS REPO!**<br>
+> ⚠️ **DO NOT CLONE THIS REPO!** <br>
+> Because the map data was previously hosted on github, the repo is ~2GB large. <br>
 > You can download it as ZIP instead!
-> Because the map data was previously hosted on github, the repo is ~2GB large.
 
 ## Example
 
@@ -37,4 +38,3 @@ I took a world download of the 0b0t Temp Map _(`temp.0b0t.org`)_ and rendered it
 - Lazy-Loading Zoom
 - Isometric / Topdown View
 - Show coordinates
-
